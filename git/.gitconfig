@@ -1,0 +1,7 @@
+[http]
+	sslVerify = false
+[user]
+	name = ryanfakir
+	email = ryanfakir@gmail.com
+[core]
+	excludesfile = C:/Users/pyan/.gitignore_global
