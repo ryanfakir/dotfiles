@@ -14,8 +14,14 @@ set wildmenu
 set background=dark
 colorscheme solarized
 " set alt disable
-:set winaltkeys=no
-
+set winaltkeys=no
+"auto compelet setup
+set completeopt=longest,menuone 
+"set ruler
+set ruler
+set nowrapscan
+"set autosave
+set autowrite
 
 
 
