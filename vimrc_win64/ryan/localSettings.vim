@@ -20,7 +20,6 @@ augroup configgroup
     autocmd BufEnter *.sh setlocal tabstop=2
     autocmd BufEnter *.sh setlocal shiftwidth=2
     autocmd BufEnter *.sh setlocal softtabstop=2
-    autocmd FileType go nmap <leader>r  <Plug>(go-run)
     autocmd FileType go setlocal noexpandtab tabstop=4 shiftwidth=4 
     " run :GoBuild or :GoTestCompile based on the go file
     function! s:build_go_files()
@@ -31,8 +30,17 @@ augroup configgroup
         call go#cmd#Build(0)
       endif
     endfunction
+    autocmd FileType go nmap <leader>r  <Plug>(go-run)
     autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
     autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)  
+    autocmd FileType go nmap <Leader>i <Plug>(go-info)
+    autocmd FileType go nmap <Leader>p :GoSameIdsToggle<CR>
+    autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+    autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+    autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+    autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 augroup END
 let g:go_fmt_command = "goimports"
 let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
