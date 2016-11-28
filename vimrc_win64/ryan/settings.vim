@@ -22,6 +22,7 @@ set ruler
 set nowrapscan
 "set autosave
 set autowrite
+set cursorline
 
 
 
