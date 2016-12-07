@@ -31,6 +31,8 @@ augroup configgroup
       endif
     endfunction
     autocmd FileType go nmap <leader>r  <Plug>(go-run)
+    autocmd FileType go nmap <leader>t  <Plug>(go-test)	
+    autocmd FileType go nmap <leader>b  <Plug>(go-build)
     autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
     autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)  
     autocmd FileType go nmap <Leader>i <Plug>(go-info)
@@ -44,4 +46,7 @@ let g:go_fmt_command = "goimports"
 let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
-
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsListSnippets = '<c-tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<c-k>'

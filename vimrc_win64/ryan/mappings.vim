@@ -24,6 +24,7 @@ map <leader>s :w<CR>
 map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
+inoremap <silent> <A-f> <C-x><C-o>
 " center cursor
 nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 

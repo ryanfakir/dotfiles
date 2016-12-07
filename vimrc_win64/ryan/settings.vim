@@ -23,7 +23,7 @@ set nowrapscan
 "set autosave
 set autowrite
 set cursorline
-
+filetype plugin on
 
 
 
