@@ -33,5 +33,5 @@ nnoremap <silent> <F6> :NERDTreeToggle<CR>
 "
 
 map <silent>F <leader>F
-map <silent>f <leader>f
+map <slient>f <leader>f
 map <leader> <Plug>(easymotion-prefix)
