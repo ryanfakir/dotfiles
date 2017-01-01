@@ -24,14 +24,22 @@ map <leader>s :w<CR>
 map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
-inoremap <silent> <A-f> <C-x><C-o>
+inoremap <leader>f <C-x><C-o>
 " center cursor
 nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
-"
-call togglebg#map("<F5>")
 nnoremap <silent> <F6> :NERDTreeToggle<CR>
-"
-
 map <silent>F <leader>F
 map <silent>f <leader>f
 map <leader> <Plug>(easymotion-prefix)
+
+map <F5> :call ToggleBg()<CR>
+let g:cheatsheet_toggle_on=0
+function! ToggleBg()
+    if g:cheatsheet_toggle_on
+        let g:cheatsheet_toggle_on =0
+        :set background=dark
+    else
+        let g:cheatsheet_toggle_on = 1
+        :set background=light
+    endif    
+endfunction

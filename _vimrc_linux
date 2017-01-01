@@ -1,0 +1,27 @@
+set nocompatible          
+filetype off                 
+"fix solarized color
+syntax enable
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'scrooloose/nerdtree'
+Plugin 'fatih/vim-go'
+Plugin 'sirver/ultisnips'
+Plugin 'kien/ctrlp.vim'
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
+Plugin 'davidhalter/jedi-vim'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'NLKNguyen/papercolor-theme'
+call vundle#end()            
+filetype plugin indent on   
+
+colorscheme PaperColor
+set t_Co=256
+:so ~/dotfiles/vimrc_win64/ryan/settings.vim
+:so ~/dotfiles/vimrc_win64/ryan/mappings.vim
+:so ~/dotfiles/vimrc_win64/ryan/abbrs.vim
+:so ~/dotfiles/vimrc_win64/ryan/localSettings.vim
+
+
+
