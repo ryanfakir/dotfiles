@@ -24,7 +24,7 @@ map <leader>s :w<CR>
 map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
-inoremap <leader>f <C-x><C-o>
+inoremap <C-f> <C-x><C-o>
 " center cursor
 nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 nnoremap <silent> <F6> :NERDTreeToggle<CR>
@@ -33,7 +33,7 @@ map <silent>f <leader>f
 map <leader> <Plug>(easymotion-prefix)
 
 map <F5> :call ToggleBg()<CR>
-let g:cheatsheet_toggle_on=0
+let g:cheatsheet_toggle_on=1
 function! ToggleBg()
     if g:cheatsheet_toggle_on
         let g:cheatsheet_toggle_on =0

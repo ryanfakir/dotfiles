@@ -21,6 +21,7 @@ filetype plugin on
 " encode set
 set encoding=utf-8
 set omnifunc=syntaxcomplete#Complete
+set background=dark
 
 
 
