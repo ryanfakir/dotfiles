@@ -1,8 +1,8 @@
-
 vnoremap \y y:call system("pbcopy", getreg("\""))<CR>
 nnoremap \p :call setreg("\"", systm("pbpaste"))<CR>p
 set clipboard=unnamedplus,unnamed,autoselect
 let g:go_version_warning= 0
+set backspace=indent,eol,start
 
 set nocompatible          
 filetype off                 
@@ -29,6 +29,3 @@ set t_Co=256
 :so ~/dotfiles/vimrc_win64/ryan/mappings.vim
 :so ~/dotfiles/vimrc_win64/ryan/abbrs.vim
 :so ~/dotfiles/vimrc_win64/ryan/localSettings.vim
-
-
-
