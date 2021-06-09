@@ -3,6 +3,7 @@ nnoremap \p :call setreg("\"", systm("pbpaste"))<CR>p
 set clipboard=unnamedplus,unnamed,autoselect
 let g:go_version_warning= 0
 set backspace=indent,eol,start
+set ts=4 sts=-1 sw=0 et
 
 set nocompatible          
 filetype off                 
