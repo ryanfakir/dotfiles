@@ -1,30 +1,41 @@
+" require pip install 
+" python3 -m pip install --user --upgrade pynvim
 vnoremap \y y:call system("pbcopy", getreg("\""))<CR>
 nnoremap \p :call setreg("\"", systm("pbpaste"))<CR>p
-set clipboard=unnamedplus,unnamed,autoselect
 let g:go_version_warning= 0
-set backspace=indent,eol,start
 
-set nocompatible          
-filetype off                 
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+      silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+endif
+
+call plug#begin()
+Plug 'preservim/nerdtree'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'sirver/ultisnips'
+Plug 'kien/ctrlp.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-fugitive'
+Plug 'neoclide/coc.nvim', {'branch': 'release'} 
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'nvim-tree/nvim-web-devicons' " Recommended (for coloured icons)
+Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
+call plug#end()
+
 "fix solarized color
-syntax enable
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'scrooloose/nerdtree'
-Plugin 'fatih/vim-go'
-Plugin 'sirver/ultisnips'
-Plugin 'kien/ctrlp.vim'
-Plugin 'nsf/gocode', {'rtp': 'vim/'}
-Plugin 'davidhalter/jedi-vim'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'tpope/vim-fugitive'
-call vundle#end()            
-filetype plugin indent on   
-
-colorscheme PaperColor
-set t_Co=256
+""call vundle#begin()
+""
+""Plugin 'scrooloose/nerdtree'
+""Plugin 'fatih/vim-go'
+""Plugin 'sirver/ultisnips'
+""Plugin 'kien/ctrlp.vim'
+""Plugin 'nsf/gocode', {'rtp': 'vim/'}
+""Plugin 'davidhalter/jedi-vim'
+""Plugin 'easymotion/vim-easymotion'
+""Plugin 'NLKNguyen/papercolor-theme'
+""Plugin 'tpope/vim-fugitive'
+""call vundle#end()            
+""
 :so ~/dotfiles/vimrc_win64/ryan/settings.vim
 :so ~/dotfiles/vimrc_win64/ryan/mappings.vim
 :so ~/dotfiles/vimrc_win64/ryan/abbrs.vim

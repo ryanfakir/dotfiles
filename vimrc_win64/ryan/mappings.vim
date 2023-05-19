@@ -19,7 +19,9 @@ inoremap ( ()<ESC>a
 inoremap [ []<ESC>a
 inoremap { {}<ESC>a
 inoremap <leader>{ {<CR>}<ESC><S-o><TAB>
-map <leader>s :w<CR>
+map <silent><leader>s :w<CR>
+map <silent><leader>o :NERDTreeToggle<CR>
+
 " go mapping
 map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
